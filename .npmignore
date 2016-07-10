@@ -1,0 +1,8 @@
+**/.*
+package.json
+**/*.md
+**/examples/
+**/docs/
+**/tests/
+**/*.psd
+**/mcms.json
