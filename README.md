@@ -39,6 +39,6 @@ web前端开发实战~
 
 ### 用到的工具
 那么，我们需要用如下的工具：
-> `express.js`: 基于Node.js写的服务器框架，我们项目中用于起本地服务器；
-> `git`: 代码管理工具，功能类似于`svn`；
-> `npm`: Node.js的包(或叫模块)管理工具，在`package.json`中依赖的模块，可以通过`npm install`来安装到本地，存放于`node_modules`文件夹中。
+1. `express.js`: 基于Node.js写的服务器框架，我们项目中用于起本地服务器；
+2. `git`: 代码管理工具，功能类似于`svn`；
+3. `npm`: Node.js的包(或叫模块)管理工具，在`package.json`中依赖的模块，可以通过`npm install`来安装到本地，存放于`node_modules`文件夹中。
