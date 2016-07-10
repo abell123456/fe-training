@@ -44,4 +44,5 @@ web前端开发实战~
 
 1. `express.js`: 基于Node.js写的服务器框架，我们项目中用于起本地服务器；
 2. `git`: 代码管理工具，功能类似于`svn`；
-3. `npm`: Node.js的包(或叫模块)管理工具，在`package.json`中依赖的模块，可以通过`npm install`来安装到本地，存放于`node_modules`文件夹中。
+3. `npm`: Node.js的包(或叫模块)管理工具，在`package.json`中依赖的模块，可以通过`npm install`来安装到本地，存放于`node_modules`文件夹中;
+4. `webpack.js`: 前端构建工具，通过各种第三方插件能将scss/less构建成css、jsx构建成普通js等；同时还可以处理图片的压缩合并、代码的压缩以及格式化等等。
