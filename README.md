@@ -16,7 +16,9 @@ web前端开发实战~
         .npmignore                        # 过滤不需要发布到线上的文件
         package.json                      # 应用信息与依赖配置
         README.md                         # 应用文档
-        index.js                          # 入口文件
+        index.js                          # js入口文件
+        index.html                        # html文件
+        training.md                       # 培训计划说明书
 
 ## 须知
 在本项目中，因为不需要最终发布到线上，所以我们只有开发环境的搭建，而没有将所有代码进行构建的功能。
