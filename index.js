@@ -1,1 +1,1 @@
-document.querySelector('#root').innerHTML = 'aaa';
+require('./mouse-scroll');

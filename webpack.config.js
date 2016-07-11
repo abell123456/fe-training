@@ -23,12 +23,13 @@ module.exports = {
             exclude: /node_modules/,
             include: __dirname
         }, {
-            test: /\.css?$/,
+            test: /\.css$/,
             loaders: ['style', 'raw'],
             include: __dirname
         }, {
             test: /\.s(a|c)ss$/,
-            loader: 'css!sass'
+            loaders: ['style', 'css', 'sass'],
+            include: __dirname
         }]
     }
 };

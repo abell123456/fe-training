@@ -1,0 +1,71 @@
+$leftItemWidth: 40px;
+
+.ms-container {
+
+    .ms-left {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: solid 1px #ccc;
+        width: $leftItemWidth;
+        padding: 0;
+        vertical-align: top;
+        margin: 0;
+        
+        .ms-left-item {
+            position: relative;
+            border-bottom: solid 1px #ccc;
+            padding: 0;
+            text-align: center;
+            cursor: pointer;
+            z-index: 99;
+            height: 148px;
+
+            .ms-text-helper {
+                display: inline-block;
+                width: 20px;
+                margin-top: 40px;
+            }
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .ms-move-helper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $leftItemWidth;
+            height: 148px;
+            border: solid red 1px;
+            border-radius: 5px;
+            display: none;
+            z-index: 1;
+        }
+    }
+
+    // 右侧区域
+    .ms-right {
+        margin-left: $leftItemWidth;
+        position: absolute;
+        top: 0;
+        width: 580px;
+
+        .ms-right-item {
+            height: 450px;
+            overflow: hidden;
+            font-size: 0;
+
+            .ms-right-brand {
+                font-size: 14px;
+                color: #666;
+                display: inline-block;
+                width: 33%;
+                text-align: center;
+                height: 150px;
+                line-height: 150px;
+            }
+        }
+    }
+}

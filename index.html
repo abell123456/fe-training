@@ -2,9 +2,75 @@
 <html>
     <head>
         <title>Redux TodoMVC example</title>
+
+        <style type="text/css">
+            ul li {
+                list-style-type: none;
+            }
+
+            .ms-container {
+                margin: 20px auto;
+                width: 600px;
+                height: 450px;
+                background: #dedede;
+                position: relative;
+                overflow: hidden;
+            }
+        </style>
     </head>
     <body>
-        <div class="todoapp" id="root"></div>
+        <div class='ms-container'>
+            <!-- 左侧导航区域 -->
+            <ul class='ms-left'>
+                <li class='ms-move-helper' data-role="helper"></li>
+                <li class='ms-left-item' data-role="nav-item">
+                    <div class='ms-text-helper'>国际品牌</div>
+                </li>
+                <li class='ms-left-item' data-role="nav-item">
+                    <div class='ms-text-helper'>创意大牌</div>
+                </li>
+                <li class='ms-left-item' data-role="nav-item">
+                    <div class='ms-text-helper'>新晋品牌</div>
+                </li>
+            </ul>
+
+            <!-- 右侧滚动区域 -->
+            <div class='ms-right' data-role="right-scroll">
+                <ul class='ms-right-item'>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                    <li class='ms-right-brand'>brand1</li>
+                </ul>
+                <ul class='ms-right-item'>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                    <li class='ms-right-brand'>brand2</li>
+                </ul>
+                <ul class='ms-right-item'>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                    <li class='ms-right-brand'>brand3</li>
+                </ul>
+            <div>
+        </div>
         <script src="/static/bundle.js"></script>
     </body>
 </html>
