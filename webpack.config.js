@@ -1,3 +1,5 @@
+// 代码构建的一个配置
+
 var path = require('path');
 var webpack = require('webpack');
 

@@ -1,1 +1,1 @@
-require('./mouse-scroll');
+require('./mouse-scroll/index');
