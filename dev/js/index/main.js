@@ -1,5 +1,3 @@
-require('./index.scss');
-
 const $ = require('jquery');
 
 const moveEl = $('[data-role="helper"]');

@@ -1,7 +1,19 @@
 $leftItemWidth: 40px;
 
-.ms-container {
+ul li {
+    list-style-type: none;
+}
 
+.ms-container {
+    margin: 20px auto;
+    width: 600px;
+    height: 450px;
+    background: #dedede;
+    position: relative;
+    overflow: hidden;
+}
+
+.ms-container {
     .ms-left {
         position: absolute;
         left: 0;
@@ -11,7 +23,7 @@ $leftItemWidth: 40px;
         padding: 0;
         vertical-align: top;
         margin: 0;
-        
+
         .ms-left-item {
             position: relative;
             border-bottom: solid 1px #ccc;
@@ -30,6 +42,7 @@ $leftItemWidth: 40px;
             &:last-child {
                 border-bottom: none;
             }
+
         }
 
         .ms-move-helper {
@@ -43,6 +56,7 @@ $leftItemWidth: 40px;
             display: none;
             z-index: 1;
         }
+
     }
 
     // 右侧区域
@@ -66,6 +80,9 @@ $leftItemWidth: 40px;
                 height: 150px;
                 line-height: 150px;
             }
+
         }
+
     }
+
 }

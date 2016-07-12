@@ -1,37 +1,20 @@
-// 代码构建的一个配置
+'use strict';
 
 var path = require('path');
-var webpack = require('webpack');
 
-module.exports = {
-    devtool: 'cheap-module-eval-source-map',
-    entry: [
-        'webpack-hot-middleware/client',
-        './index'
-    ],
-    output: {
-        path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
-        publicPath: '/static/'
-    },
-    plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    module: {
-        loaders: [{
-            test: /\.js$/,
-            loaders: ['babel'],
-            exclude: /node_modules/,
-            include: __dirname
-        }, {
-            test: /\.css$/,
-            loaders: ['style', 'raw'],
-            include: __dirname
-        }, {
-            test: /\.s(a|c)ss$/,
-            loaders: ['style', 'css', 'sass'],
-            include: __dirname
-        }]
+function getPath(jsPath) {
+    return path.join(__dirname, jsPath);
+}
+
+module.exports = [
+    {
+        entry: {
+            // 定义打包的模块
+            'index/main': getPath('dev/js/index/main')
+        },
+        output: {
+            path: getPath('dist/js/'),
+            filename: '[name].js'
+        }
     }
-};
+];

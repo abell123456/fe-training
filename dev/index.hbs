@@ -1,22 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title>Redux TodoMVC example</title>
-
-        <style type="text/css">
-            ul li {
-                list-style-type: none;
-            }
-
-            .ms-container {
-                margin: 20px auto;
-                width: 600px;
-                height: 450px;
-                background: #dedede;
-                position: relative;
-                overflow: hidden;
-            }
-        </style>
+        <title>fe-training</title>
+        {{#development}}
+        <link href="css/index.css" type="text/css" media="all" rel="stylesheet" />
+        {{/development}}
+        {{#production}}
+        <link href="css/index.min.css" type="text/css" media="all" rel="stylesheet" />
+        {{/production}}
     </head>
     <body>
         <div class='ms-container'>
@@ -72,6 +63,8 @@
                 </ul>
             <div>
         </div>
-        <script src="/static/bundle.js"></script>
+
+
+        <script type="text/javascript" src="js/index/main.js"></script>
     </body>
 </html>
