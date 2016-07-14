@@ -7,11 +7,11 @@
 3. TODO的操作目前只有删除和增加两项，都要操作后都要保存到服务器。
 
 ## 可能用到的接口
-> TODO List保存在服务端的列表： /server/list
-> TODO List新增： /server/add
+> TODO List保存在服务端的列表： /server/list  
+> TODO List新增： /server/add  
 > TODO List删除： /server/delete
 
-## 浏览器开发调试地址
+## 浏览器开发调试地址  
 `http://localhost:3000/pro-1`  
 
 浏览器里输入上面的地址进行调试开发即可。因为我们会有好几个项目，所以后续会增添具体的项目路径。
