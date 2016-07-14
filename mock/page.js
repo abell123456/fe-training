@@ -15,9 +15,14 @@ module.exports = function(app) {
 
     // 接口请求返回数据
     app.get('/server/*', function(req, res) {
-        console.log('server req:', req.url);
+        res.end(getDatabase(req));
+    });
 
-        res.end(getDatabase(req.url));
+    // 接口请求返回数据
+    app.post('/server/*', function(req, res) {
+        console.log(req.body);
+
+        res.end(postExec(req));
     });
 };
 
@@ -27,21 +32,104 @@ const noRes = {
     errorMessage: '请求地址有错误!'
 };
 
-function getDatabase(url) {
-    const jsonName = url.split(/\//).slice(-1)[0];
+const getApis = ['list', 'add', 'delete'];
+const postApis = getApis.map(item => '/server/' + item);
 
-    const jsonPath = getPath('../database/' + jsonName + '.json');
+const jsonPath = getPath('../database/list.json');
+
+// POST请求处理
+function postExec(req) {
+    let resData = noRes;
+
+    const reqDataId = req.param('id');
+    const reqDataName = req.param('name');
+
+    if (postApis.includes(req.url)) {
+        if (req.url === '/server/add') {
+            if (!reqDataName || !reqDataId) {
+                resData = {
+                    status: false,
+                    errorMessage: '参数不合法：请传入对应任务名:name以及任务标识：id',
+                    data: {}
+                };
+            } else {
+                const json = fsp.readJsonSync(jsonPath);
+
+                json.push({
+                    name: reqDataName,
+                    id: reqDataId,
+                    isComplete: false
+                });
+
+                fsp.outputJsonSync(jsonPath, json, {
+                    spaces: 4
+                });
+
+                resData = {
+                    status: true,
+                    errorMessage: '',
+                    data: {
+                        message: 'Success!'
+                    }
+                };
+            }
+
+        } else if (req.url === '/server/delete') {
+            if (!reqDataId) {
+                resData = {
+                    status: false,
+                    errorMessage: '参数不合法：请传入对应任务标识：id',
+                    data: {}
+                };
+            } else {
+                const json = fsp.readJsonSync(jsonPath);
+
+                let curOrder;
+
+                json.some((item, index) => {
+                    if (item.id == reqDataId) {
+                        curOrder = index;
+
+                        return true;
+                    }
+                });
+
+                json.splice(curOrder, 1);
+
+                fsp.outputJsonSync(jsonPath, json, {
+                    spaces: 4
+                });
+
+                resData = {
+                    status: true,
+                    errorMessage: '',
+                    data: {
+                        message: 'Success!'
+                    }
+                };
+            }
+        }
+    }
+
+    return JSON.stringify(resData);
+}
+
+// GET请求
+function getDatabase(req) {
+    const jsonName = req.url.split(/\//).slice(-1)[0];
 
     let resData = noRes;
 
-    if (fs.existsSync(jsonPath)) {
-        resData = {
-            status: true,
-            data: {
-                list: fsp.readJsonSync(jsonPath)
-            },
-            errorMessage: ''
-        };
+    if (getApis.includes(jsonName)) {
+        if (jsonName === 'list' && fs.existsSync(jsonPath)) {
+            resData = {
+                status: true,
+                data: {
+                    list: fsp.readJsonSync(jsonPath)
+                },
+                errorMessage: ''
+            };
+        }
     }
 
     return JSON.stringify(resData);
