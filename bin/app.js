@@ -58,7 +58,7 @@ webpackConfig.forEach(function(currentValue, i, array) {
 });
 
 app.use(webpackDevMiddleware(webpack(webpackConfig), {
-    publicPath: '/js/'
+    publicPath: '/'
 }));
 
 // static
